@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Build the mod
-        run: dotnet build UsefulPets.csproj --configuration Release -p:GamePath=none
+        run: dotnet build UsefulPets/UsefulPets.csproj --configuration Release -p:GamePath=none
 
       - name: Package the mod
         run: |
