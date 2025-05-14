@@ -18,13 +18,8 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-      - name: Create dummy SMAPI environment
-        run: |
-          mkdir -p smapi/StardewModdingAPI
-          echo "// dummy SMAPI" > smapi/StardewModdingAPI/StardewModdingAPI.dll
-
       - name: Build the mod
-        run: dotnet build UsefulPets/UsefulPets.csproj --configuration Release -p:GamePath=${{ github.workspace }}/smapi
+        run: dotnet build UsefulPets/UsefulPets.csproj --configuration Release -p:GamePath=none -p:EnableGameValidation=false
 
       - name: Package the mod
         run: |
