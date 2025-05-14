@@ -4,17 +4,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Version>0.0.2</Version>
-        <ModZipPath>$(SolutionDir)Releases</ModZipPath>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
     </ItemGroup>
-
-    <Target Name="CleanOldReleaseZips" BeforeTargets="BeforeBuild">
-        <ItemGroup>
-            <OldZips Include="$(SolutionDir)Releases\*.zip" />
-        </ItemGroup>
-        <Delete Files="@(OldZips)" />
-    </Target>
 </Project>
