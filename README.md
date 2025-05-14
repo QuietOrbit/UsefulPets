@@ -1,0 +1,3 @@
+# Useful Pets
+
+Useful Pets is a Stardew Valley mod that gives your pets something to do while you're busy farming. With this mod, pets will occasionally help out around the farm by chasing away crows and foraging small items for you. These helpful behaviors are determined by your friendship level with the pet. At the end of each day, you can see how many crows your pet chased away on the daily summary screen or by talking to them directly. While pets won't replace scarecrows, they'll add an extra layer of charm and functionality to your farm life. Future updates will include random pet events, such as your pet following you around on special days.
