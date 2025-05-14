@@ -1,0 +1,10 @@
+﻿{
+    "Name": "Useful Pets",
+    "Author": "QuietOrbit",
+    "Version": "0.1.0",
+    "Description": "A mod which allows your pets to earn their keep on your farm.",
+    "UniqueID": "QuietOrbit.UsefulPets",
+    "EntryDll": "UsefulPets.dll",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": []
+}
