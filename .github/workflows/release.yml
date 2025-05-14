@@ -1,0 +1,39 @@
+﻿name: Release Useful Pets Mod
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Build the mod
+        run: dotnet build UsefulPets.csproj --configuration Release -p:GamePath=none
+
+      - name: Package the mod
+        run: |
+          mkdir -p dist/UsefulPets
+          cp UsefulPets/bin/Release/net6.0/UsefulPets.dll dist/UsefulPets/
+          cp UsefulPets/manifest.json dist/UsefulPets/
+          cd dist
+          zip -r UsefulPets-${{ github.ref_name }}.zip UsefulPets
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Useful Pets ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: dist/UsefulPets-${{ github.ref_name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
