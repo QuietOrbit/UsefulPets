@@ -1,6 +1,6 @@
-﻿using StardewValley;
+﻿using Microsoft.Xna.Framework;
+using StardewValley;
 using StardewValley.Characters;
-using System;
 
 namespace UsefulPets.Services
 {
